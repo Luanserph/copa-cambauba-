@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Modelar Cambaúba - Músicas da Copa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 font-sans text-slate-100 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Cabeçalho -->
+    <header class="bg-slate-950 border-b border-slate-800 py-4 px-6 shadow-md">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-500 text-slate-950 p-2.5 rounded-xl font-bold flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-wide text-white">Escola Modelar Cambaúba</h1>
+                    <p class="text-xs text-slate-400">Projeto Escolar • Copa do Mundo 2026</p>
+                </div>
+            </div>
+            <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Trabalhos dos Alunos
+            </span>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start my-auto">
+        
+        <!-- Player Principal (Esquerda) -->
+        <section class="lg:col-span-5 bg-slate-800/80 border border-slate-700/60 rounded-3xl p-6 shadow-2xl backdrop-blur flex flex-col items-center text-center">
+            <div class="w-48 h-48 bg-gradient-to-tr from-amber-500 to-indigo-600 rounded-2xl shadow-xl flex items-center justify-center mb-6 relative overflow-hidden group">
+                <i class="fa-solid fa-music text-6xl text-white drop-shadow-md animate-bounce"></i>
+            </div>
+
+            <span id="track-subtitle" class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">TURMA 601</span>
+            <h2 id="track-title" class="text-2xl font-extrabold text-white mb-2 leading-tight">Carregando...</h2>
+            <p id="track-artist" class="text-sm text-slate-400 mb-6">-</p>
+
+            <!-- Barra de Progresso -->
+            <div class="w-full mb-6">
+                <div id="progress-container" class="w-full bg-slate-700 h-2 rounded-full cursor-pointer overflow-hidden relative">
+                    <div id="progress-bar" class="bg-amber-500 h-full w-0 transition-all duration-100"></div>
+                </div>
+                <div class="flex justify-between text-xs text-slate-400 mt-1">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <!-- Controles do Player -->
+            <div class="flex items-center justify-center space-x-6 mb-6">
+                <button onclick="prevTrack()" class="text-slate-300 hover:text-white text-xl transition transform hover:scale-110">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button onclick="togglePlay()" id="play-btn" class="w-16 h-16 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-lg transition transform hover:scale-105">
+                    <i class="fa-solid fa-play" id="play-icon"></i>
+                </button>
+                <button onclick="nextTrack()" class="text-slate-300 hover:text-white text-xl transition transform hover:scale-110">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+
+            <!-- Volume -->
+            <div class="flex items-center space-x-3 w-full px-4">
+                <i class="fa-solid fa-volume-high text-slate-400 text-sm"></i>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1" class="w-full accent-amber-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg">
+            </div>
+        </section>
+
+        <!-- Lista de Reprodução (Direita) -->
+        <section class="lg:col-span-7 bg-slate-800/40 border border-slate-700/50 rounded-3xl p-6 shadow-xl backdrop-blur">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-700/60">
+                <h3 class="font-bold text-lg text-white">Lista de Músicas dos Alunos</h3>
+                <span id="total-tracks-badge" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full font-medium">Turmas 601 e 602</span>
+            </div>
+
+            <div id="playlist" class="space-y-2.5 max-h-[440px] overflow-y-auto pr-1">
+                <!-- Preenchido via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-4 text-center text-xs text-slate-500">
+        Escola Modelar Cambaúba • Apresentação de Músicas da Copa
+    </footer>
+
+    <audio id="audio-element"></audio>
+
+    <script>
+        const songs = [
+            // ================= TURMA 601 =================
+            { title: "Cordel da Copa", artist: "Jojo e Duda", src: "faixa01.mp3", turma: "TURMA 601" },
+            { title: "Brasil na Copa", artist: "Davi e Gabriel", src: "Davi-e-Gabriel-Brasil.mp3", turma: "TURMA 601" },
+            { title: "Produção Especial", artist: "Ingrid e Yasmin", src: "Ingrid-e-Yasmin.mp3", turma: "TURMA 601" },
+            { title: "Cordel Alternativo", artist: "Jojo e Duda", src: "jojo.mp3", turma: "TURMA 601" },
+            { title: "Futebol e Emoção", artist: "Khadija", src: "khadija.mp3", turma: "TURMA 601" },
+            { title: "Espírito Esportivo", artist: "Ludmila", src: "ludmila.mp3", turma: "TURMA 601" },
+            { title: "Paixão Nacional", artist: "Marcelo e Maria Luiza C.", src: "marcelo.mp3", turma: "TURMA 601" },
+            { title: "Canção da Torcida", artist: "Maria Luiza e Manuela", src: "maria-luiza.mp3", turma: "TURMA 601" },
+            { title: "Copa Especial", artist: "Mariana Grillo e Catharina", src: "mariana.mp3", turma: "TURMA 601" },
+            { title: "Hino da Copa", artist: "Noah", src: "noah.mp3", turma: "TURMA 601" },
+            { title: "Rap da Copa", artist: "Daiha e Henrique", src: "rap-copa.mp3", turma: "TURMA 601" },
+            { title: "Samba do Brasil", artist: "Samuel e Eduardo", src: "samuel.mp3", turma: "TURMA 601" },
+
+            // ================= TURMA 602 =================
+            { title: "Apresentação Turma 602", artist: "Introdução", src: "turma602.mp3", turma: "TURMA 602" },
+            { title: "Música Alunos", artist: "Ana Flor e Mariana", src: "ana.mp3", turma: "TURMA 602" },
+            { title: "Futebol e Torcida", artist: "Ciça e Ágatha", src: "cica.mp3", turma: "TURMA 602" },
+            { title: "Cordel Vera Redação", artist: "Daniel e Tarsila", src: "daniel.mp3", turma: "TURMA 602" },
+            { title: "Canção da Copa", artist: "Giovana e Maria Fernanda", src: "giovana.mp3", turma: "TURMA 602" },
+            { title: "Paixão pelo Esporte", artist: "João Antônio e Vitor Fadel", src: "joaoa.mp3", turma: "TURMA 602" },
+            { title: "Apresentação Especial", artist: "Lara e Julia", src: "lara.mp3", turma: "TURMA 602" },
+            { title: "Futebol Maneiro", artist: "Miguel Almeida e Guilherme Portes", src: "miguela.mp3", turma: "TURMA 602" },
+            { title: "Hino e Emoção", artist: "Miguel Cardeal e Gabriel Cardoso", src: "miguelc.mp3", turma: "TURMA 602" },
+            { title: "Cordel Redação", artist: "Vera, Vinícius, Helena e Lorenzo", src: "vera.mp3", turma: "TURMA 602" },
+            { title: "Música Alunos", artist: "Nina e Fernanda", src: "nina.mp3", turma: "TURMA 602" },
+            { title: "Trabalho de Cordel", artist: "Vitor Lima e João Pedro Neves", src: "vitor.mp3", turma: "TURMA 602" }
+        ];
+
+        let currentTrackIndex = 0;
+        const audioElement = document.getElementById('audio-element');
+        const playBtn = document.getElementById('play-btn');
+        const playIcon = document.getElementById('play-icon');
+        const trackTitle = document.getElementById('track-title');
+        const trackArtist = document.getElementById('track-artist');
+        const trackSubtitle = document.getElementById('track-subtitle');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const volumeBar = document.getElementById('volume-bar');
+        const playlistContainer = document.getElementById('playlist');
+
+        function renderPlaylist() {
+            playlistContainer.innerHTML = '';
+            let currentTurmaHeader = '';
+
+            songs.forEach((song, index) => {
+                if (song.turma !== currentTurmaHeader) {
+                    currentTurmaHeader = song.turma;
+                    const headerDiv = document.createElement('div');
+                    headerDiv.className = "text-xs font-bold text-amber-400 uppercase tracking-wider pt-3 pb-1 px-1 mt-2 border-t border-slate-700/40 first:mt-0 first:border-t-0";
+                    headerDiv.textContent = currentTurmaHeader;
+                    playlistContainer.appendChild(headerDiv);
+                }
+
+                const item = document.createElement('div');
+                item.className = `flex items-center justify-between p-3 rounded-xl cursor-pointer transition border ${index === currentTrackIndex ? 'bg-amber-500/10 border-amber-500/40 text-white' : 'bg-slate-800/60 border-slate-700/40 text-slate-300 hover:bg-slate-700/50'}`;
+                item.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <span class="w-7 h-7 rounded-lg ${index === currentTrackIndex ? 'bg-amber-500 text-slate-950 font-bold' : 'bg-slate-700 text-slate-300'} flex items-center justify-center text-xs">${index + 1}</span>
+                        <div>
+                            <h4 class="text-sm font-semibold">${song.title}</h4>
+                            <p class="text-xs text-slate-400">${song.artist}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid ${index === currentTrackIndex && !audioElement.paused ? 'fa-pause text-amber-400' : 'fa-play text-slate-400'} text-xs"></i>
+                    </div>
+                `;
+                item.onclick = () => {
+                    currentTrackIndex = index;
+                    loadTrack(currentTrackIndex);
+                    playTrack();
+                };
+                playlistContainer.appendChild(item);
+            });
+        }
+
+        function loadTrack(index) {
+            currentTrackIndex = index;
+            audioElement.src = songs[index].src;
+            trackTitle.textContent = songs[index].title;
+            trackArtist.textContent = songs[index].artist;
+            trackSubtitle.textContent = songs[index].turma;
+            renderPlaylist();
+        }
+
+        function playTrack() {
+            audioElement.play().then(() => {
+                playIcon.className = "fa-solid fa-pause";
+                renderPlaylist();
+            }).catch(e => {
+                console.log("Erro de reprodução:", e);
+                playIcon.className = "fa-solid fa-play";
+            });
+        }
+
+        function pauseTrack() {
+            audioElement.pause();
+            playIcon.className = "fa-solid fa-play";
+            renderPlaylist();
+        }
+
+        function togglePlay() {
+            if (audioElement.paused) {
+                playTrack();
+            } else {
+                pauseTrack();
+            }
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % songs.length;
+            loadTrack(currentTrackIndex);
+            playTrack();
+        }
+
+        function prevTrack() {
+            currentTrackIndex = (currentTrackIndex - 1 + songs.length) % songs.length;
+            loadTrack(currentTrackIndex);
+            playTrack();
+        }
+
+        audioElement.addEventListener('timeupdate', () => {
+            if (audioElement.duration) {
+                const progressPercent = (audioElement.currentTime / audioElement.duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                let currentMinutes = Math.floor(audioElement.currentTime / 60);
+                let currentSeconds = Math.floor(audioElement.currentTime % 60);
+                if (currentSeconds < 10) currentSeconds = `0${currentSeconds}`;
+                currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
+
+                let durationMinutes = Math.floor(audioElement.duration / 60);
+                let durationSeconds = Math.floor(audioElement.duration % 60);
+                if (durationSeconds < 10) durationSeconds = `0${durationSeconds}`;
+                if (!isNaN(audioElement.duration)) {
+                    durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
+                }
+            }
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioElement.duration;
+            if (duration) {
+                audioElement.currentTime = (clickX / width) * duration;
+            }
+        });
+
+        volumeBar.addEventListener('input', (e) => {
+            audioElement.volume = e.target.value;
+        });
+
+        audioElement.addEventListener('ended', () => {
+            nextTrack();
+        });
+
+        window.onload = () => {
+            loadTrack(0);
+        };
+    </script>
+</body>
+</html>
