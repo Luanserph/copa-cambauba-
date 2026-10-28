@@ -33,34 +33,33 @@ O projeto está publicado e disponível online através da **Vercel**:
 ### 🔹 Turma 601
 | # | Música | Alunos / Autores |
 |---|--------|------------------|
-| 1 | Cordel da Copa | Jojo e Duda |
-| 2 | Brasil na Copa | Davi e Gabriel |
-| 3 | Produção Especial | Yasmin e Ingrid |
-| 4 | Cordel Alternativo | Jojo e Duda |
-| 5 | Futebol e Emoção | Khadija |
-| 6 | Espírito Esportivo | Ludmila |
-| 7 | Paixão Nacional | Marcelo e Maria Luiza C. |
-| 8 | Canção da Torcida | Maria Luiza e Manuela |
-| 9 | Copa Especial | Mariana Grillo e Catharina |
-| 10 | Hino da Copa | Noah |
-| 11 | Rap da Copa | Daiha e Henrique |
-| 12 | Samba do Brasil | Samuel e Eduardo |
+| 1 | Brasil na Copa | Davi e Gabriel |
+| 2 | Produção Especial | Yasmin e Ingrid |
+| 3 | Cordel Alternativo | Jojo e Duda |
+| 4 | Futebol e Emoção | Khadija |
+| 5 | Espírito Esportivo | Ludmila |
+| 6 | Paixão Nacional | Marcelo e Maria Luiza C. |
+| 7 | Canção da Torcida | Maria Luiza e Manuela |
+| 8 | Copa Especial | Mariana Grillo e Catharina |
+| 9 | Hino da Copa | Noah |
+| 10 | Rap da Copa | Daiha e Henrique |
+| 11 | Samba do Brasil | Samuel e Eduardo |
 
 ### 🔹 Turma 602
 | # | Música | Alunos / Autores |
 |---|--------|------------------|
-| 13 | Apresentação Turma 602 | Introdução |
-| 14 | Música Alunos | Ana Flor e Mariana |
-| 15 | Futebol e Torcida | Ciça e Ágatha |
-| 16 | Cordel Vera Redação | Daniel e Tarsila |
-| 17 | Canção da Copa | Giovana e Maria Fernanda |
-| 18 | Paixão pelo Esporte | João Antônio e Vitor Fadel |
-| 19 | Apresentação Especial | Lara e Julia |
-| 20 | Futebol Maneiro | Miguel Almeida e Guilherme Portes |
-| 21 | Hino e Emoção | Miguel Cardeal e Gabriel Cardoso |
-| 22 | Cordel Redação | Vera, Vinícius, Helena e Lorenzo |
-| 23 | Música Alunos | Nina e Fernanda |
-| 24 | Trabalho de Cordel | Vitor Lima e João Pedro Neves |
+| 12 | Apresentação Turma 602 | Introdução |
+| 13 | Música Alunos | Ana Flor e Mariana |
+| 14 | Futebol e Torcida | Ciça e Ágatha |
+| 15 | Cordel Vera Redação | Daniel e Tarsila |
+| 16 | Canção da Copa | Giovana e Maria Fernanda |
+| 17 | Paixão pelo Esporte | João Antônio e Vitor Fadel |
+| 18 | Apresentação Especial | Lara e Julia |
+| 19 | Futebol Maneiro | Miguel Almeida e Guilherme Portes |
+| 20 | Hino e Emoção | Miguel Cardeal e Gabriel Cardoso |
+| 21 | Cordel Redação | Vera, Vinícius, Helena e Lorenzo |
+| 22 | Música Alunos | Nina e Fernanda |
+| 23 | Trabalho de Cordel | Vitor Lima e João Pedro Neves |
 
 ---
 
