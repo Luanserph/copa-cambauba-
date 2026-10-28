@@ -35,7 +35,7 @@ O projeto está publicado e disponível online através da **Vercel**:
 |---|--------|------------------|
 | 1 | Cordel da Copa | Jojo e Duda |
 | 2 | Brasil na Copa | Davi e Gabriel |
-| 3 | Produção Especial | Ingrid e Yasmin |
+| 3 | Produção Especial | Yasmin e Ingrid |
 | 4 | Cordel Alternativo | Jojo e Duda |
 | 5 | Futebol e Emoção | Khadija |
 | 6 | Espírito Esportivo | Ludmila |
