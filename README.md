@@ -14,7 +14,7 @@
 
 Aplicação web interativa criada para celebrar e divulgar os trabalhos musicais e cordéis dos alunos do 6º ano (**Turmas 601 e 602**) da **Escola Modelar Cambaúba**, no âmbito do projeto interdisciplinar da **Copa do Mundo**.
 
-O site reúne **23 produções exclusivas dos estudantes**, organizadas por turmas, em um player de áudio responsivo com design moderno.
+O site reúne **24 produções exclusivas dos estudantes**, organizadas por turmas, em um player de áudio responsivo com design moderno.
 
 ---
 
@@ -46,14 +46,14 @@ O site reúne **23 produções exclusivas dos estudantes**, organizadas por turm
 
 ---
 
-## 🎼 Lista de Músicas e Créditos dos Alunos (23 Faixas)
+## 🎼 Lista de Músicas e Créditos dos Alunos (24 Faixas)
 
-### 🔹 Turma 601 (11 faixas)
+### 🔹 Turma 601 (12 faixas)
 | # | Música | Autores / Alunos |
 |:---:|---|---|
 | **01** | Brasil na Copa | Davi e Gabriel |
-| **02** | Produção Especial | Yasmin e Ingrid |
-| **03** | Cordel Alternativo | Jojo e Duda |
+| **02** | Vai Brasil! | Yasmin e Ingrid |
+| **03** | De 1930 à Lalisa | Joana e Maria Eduarda |
 | **04** | Futebol e Emoção | Khadija |
 | **05** | Espírito Esportivo | Ludmila |
 | **06** | Paixão Nacional | Marcelo e Maria Luiza C. |
@@ -62,22 +62,23 @@ O site reúne **23 produções exclusivas dos estudantes**, organizadas por turm
 | **09** | Hino da Copa | Noah |
 | **10** | Rap da Copa | Daiha e Henrique |
 | **11** | Samba do Brasil | Samuel e Eduardo |
+| **12** | Brasil | João Pedro e Enzo |
 
 ### 🔹 Turma 602 (12 faixas)
 | # | Música | Autores / Alunos |
 |:---:|---|---|
-| **12** | Apresentação Turma 602 | Introdução Geral |
-| **13** | Música Alunos | Ana Flor e Mariana |
-| **14** | Futebol e Torcida | Ciça e Ágatha |
-| **15** | Cordel Vera Redação | Daniel e Tarsila |
-| **16** | Canção da Copa | Giovana e Maria Fernanda |
-| **17** | Paixão pelo Esporte | João Antônio e Vitor Fadel |
-| **18** | Apresentação Especial | Lara e Julia |
-| **19** | Futebol Maneiro | Miguel Almeida e Guilherme Portes |
-| **20** | Hino e Emoção | Miguel Cardeal e Gabriel Cardoso |
-| **21** | Cordel Redação | Vera, Vinícius, Helena e Lorenzo |
-| **22** | Música Alunos | Nina e Fernanda |
-| **23** | Trabalho de Cordel | Vitor Lima e João Pedro Neves |
+| **13** | Cordel da Copa | Pedro Emmanuel e Gabriel Queiroz |
+| **14** | O hit do momento | Ana Flor e Mariana |
+| **15** | Futebol e Torcida | Maria Cecília e Ágatha |
+| **16** | Copa do mundo | Daniel e Tarsila |
+| **17** | Canção da Copa | Giovana e Maria Fernanda |
+| **18** | Paixão pelo Esporte | João Antônio e Vitor Fadel |
+| **19** | A copa do mundo e seus artistas | Lara e Julia |
+| **20** | Futebol Maneiro | Miguel Almeida e Guilherme Portes |
+| **21** | Hino e Emoção | Miguel Cardeal e Gabriel Cardoso |
+| **22** | A copa do horror | Vinícius, Helena e Lorenzo |
+| **23** | Gol | Nina e Fernanda |
+| **24** | Fifa 2026 | Vitor Lima e João Pedro Neves |
 
 ---
 

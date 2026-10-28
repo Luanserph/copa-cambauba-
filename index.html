@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="bg-slate-900 font-sans text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
     <!-- Cabeçalho -->
     <header class="bg-slate-950 border-b border-slate-800 py-4 px-6 shadow-md">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="bg-amber-500 text-slate-950 p-2.5 rounded-xl font-bold flex items-center justify-center shadow-lg">
+                <div
+                    class="bg-amber-500 text-slate-950 p-2.5 rounded-xl font-bold flex items-center justify-center shadow-lg">
                     <i class="fa-solid fa-graduation-cap text-xl"></i>
                 </div>
                 <div>
@@ -21,7 +24,8 @@
                     <p class="text-xs text-slate-400">Projeto Escolar • Copa do Mundo 2026</p>
                 </div>
             </div>
-            <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-2">
+            <span
+                class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Trabalhos dos Alunos
             </span>
         </div>
@@ -29,20 +33,24 @@
 
     <!-- Conteúdo Principal -->
     <main class="max-w-6xl mx-auto px-4 py-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start my-auto">
-        
+
         <!-- Player Principal (Esquerda) -->
-        <section class="lg:col-span-5 bg-slate-800/80 border border-slate-700/60 rounded-3xl p-6 shadow-2xl backdrop-blur flex flex-col items-center text-center">
-            <div class="w-48 h-48 bg-gradient-to-tr from-amber-500 to-indigo-600 rounded-2xl shadow-xl flex items-center justify-center mb-6 relative overflow-hidden group">
+        <section
+            class="lg:col-span-5 bg-slate-800/80 border border-slate-700/60 rounded-3xl p-6 shadow-2xl backdrop-blur flex flex-col items-center text-center">
+            <div
+                class="w-48 h-48 bg-gradient-to-tr from-amber-500 to-indigo-600 rounded-2xl shadow-xl flex items-center justify-center mb-6 relative overflow-hidden group">
                 <i class="fa-solid fa-music text-6xl text-white drop-shadow-md animate-bounce"></i>
             </div>
 
-            <span id="track-subtitle" class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">TURMA 601</span>
+            <span id="track-subtitle" class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">TURMA
+                601</span>
             <h2 id="track-title" class="text-2xl font-extrabold text-white mb-2 leading-tight">Carregando...</h2>
             <p id="track-artist" class="text-sm text-slate-400 mb-6">-</p>
 
             <!-- Barra de Progresso -->
             <div class="w-full mb-6">
-                <div id="progress-container" class="w-full bg-slate-700 h-2 rounded-full cursor-pointer overflow-hidden relative">
+                <div id="progress-container"
+                    class="w-full bg-slate-700 h-2 rounded-full cursor-pointer overflow-hidden relative">
                     <div id="progress-bar" class="bg-amber-500 h-full w-0 transition-all duration-100"></div>
                 </div>
                 <div class="flex justify-between text-xs text-slate-400 mt-1">
@@ -53,13 +61,16 @@
 
             <!-- Controles do Player -->
             <div class="flex items-center justify-center space-x-6 mb-6">
-                <button onclick="prevTrack()" class="text-slate-300 hover:text-white text-xl transition transform hover:scale-110">
+                <button onclick="prevTrack()"
+                    class="text-slate-300 hover:text-white text-xl transition transform hover:scale-110">
                     <i class="fa-solid fa-backward-step"></i>
                 </button>
-                <button onclick="togglePlay()" id="play-btn" class="w-16 h-16 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-lg transition transform hover:scale-105">
+                <button onclick="togglePlay()" id="play-btn"
+                    class="w-16 h-16 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-lg transition transform hover:scale-105">
                     <i class="fa-solid fa-play" id="play-icon"></i>
                 </button>
-                <button onclick="nextTrack()" class="text-slate-300 hover:text-white text-xl transition transform hover:scale-110">
+                <button onclick="nextTrack()"
+                    class="text-slate-300 hover:text-white text-xl transition transform hover:scale-110">
                     <i class="fa-solid fa-forward-step"></i>
                 </button>
             </div>
@@ -67,15 +78,19 @@
             <!-- Volume -->
             <div class="flex items-center space-x-3 w-full px-4">
                 <i class="fa-solid fa-volume-high text-slate-400 text-sm"></i>
-                <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1" class="w-full accent-amber-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg">
+                <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1"
+                    class="w-full accent-amber-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg">
             </div>
         </section>
 
         <!-- Lista de Reprodução (Direita) -->
-        <section class="lg:col-span-7 bg-slate-800/40 border border-slate-700/50 rounded-3xl p-6 shadow-xl backdrop-blur">
+        <section
+            class="lg:col-span-7 bg-slate-800/40 border border-slate-700/50 rounded-3xl p-6 shadow-xl backdrop-blur">
             <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-700/60">
                 <h3 class="font-bold text-lg text-white">Lista de Músicas dos Alunos</h3>
-                <span id="total-tracks-badge" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full font-medium">Turmas 601 e 602</span>
+                <span id="total-tracks-badge"
+                    class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full font-medium">Turmas 601 e
+                    602</span>
             </div>
 
             <div id="playlist" class="space-y-2.5 max-h-[440px] overflow-y-auto pr-1">
@@ -95,8 +110,8 @@
         const songs = [
             // ================= TURMA 601 =================
             { title: "Brasil na Copa", artist: "Davi e Gabriel", src: "Davi-e-Gabriel-Brasil.mp3", turma: "TURMA 601" },
-            { title: "Produção Especial", artist: "Yasmin e Ingrid", src: "Yasmin-e-Ingrid.mp3", turma: "TURMA 601" },
-            { title: "Cordel Alternativo", artist: "Jojo e Duda", src: "jojo.mp3", turma: "TURMA 601" },
+            { title: "Vai Brasil!", artist: "Yasmin e Ingrid", src: "Yasmin-e-Ingrid.mp3", turma: "TURMA 601" },
+            { title: "De 1930 à Lalisa", artist: "Joana e Maria Eduarda", src: "jojo.mp3", turma: "TURMA 601" },
             { title: "Futebol e Emoção", artist: "Khadija", src: "khadija.mp3", turma: "TURMA 601" },
             { title: "Espírito Esportivo", artist: "Ludmila", src: "ludmila.mp3", turma: "TURMA 601" },
             { title: "Paixão Nacional", artist: "Marcelo e Maria Luiza C.", src: "marcelo.mp3", turma: "TURMA 601" },
@@ -105,20 +120,21 @@
             { title: "Hino da Copa", artist: "Noah", src: "noah.mp3", turma: "TURMA 601" },
             { title: "Rap da Copa", artist: "Daiha e Henrique", src: "rap-copa.mp3", turma: "TURMA 601" },
             { title: "Samba do Brasil", artist: "Samuel e Eduardo", src: "samuel.mp3", turma: "TURMA 601" },
+            { title: "Brasil", artist: "João Pedro e Enzo", src: "JoaoPedro-e-Enzo.mp3", turma: "TURMA 601" },
 
             // ================= TURMA 602 =================
-            { title: "Apresentação Turma 602", artist: "Introdução", src: "turma602.mp3", turma: "TURMA 602" },
-            { title: "Música Alunos", artist: "Ana Flor e Mariana", src: "ana.mp3", turma: "TURMA 602" },
-            { title: "Futebol e Torcida", artist: "Ciça e Ágatha", src: "cica.mp3", turma: "TURMA 602" },
-            { title: "Cordel Vera Redação", artist: "Daniel e Tarsila", src: "daniel.mp3", turma: "TURMA 602" },
+            { title: "Cordel da Copa", artist: "Pedro Emmanuel e Gabriel Queiroz", src: "turma602.mp3", turma: "TURMA 602" },
+            { title: "O hit do momento", artist: "Ana Flor e Mariana", src: "ana.mp3", turma: "TURMA 602" },
+            { title: "Futebol e Torcida", artist: "Maria Cecília e Ágatha", src: "cica.mp3", turma: "TURMA 602" },
+            { title: "Copa do mundo", artist: "Daniel e Tarsila", src: "daniel.mp3", turma: "TURMA 602" },
             { title: "Canção da Copa", artist: "Giovana e Maria Fernanda", src: "giovana.mp3", turma: "TURMA 602" },
             { title: "Paixão pelo Esporte", artist: "João Antônio e Vitor Fadel", src: "joaoa.mp3", turma: "TURMA 602" },
-            { title: "Apresentação Especial", artist: "Lara e Julia", src: "lara.mp3", turma: "TURMA 602" },
+            { title: "A copa do mundo e seus artistas", artist: "Lara e Julia", src: "lara.mp3", turma: "TURMA 602" },
             { title: "Futebol Maneiro", artist: "Miguel Almeida e Guilherme Portes", src: "miguela.mp3", turma: "TURMA 602" },
             { title: "Hino e Emoção", artist: "Miguel Cardeal e Gabriel Cardoso", src: "miguelc.mp3", turma: "TURMA 602" },
-            { title: "Cordel Redação", artist: "Vera, Vinícius, Helena e Lorenzo", src: "vera.mp3", turma: "TURMA 602" },
-            { title: "Música Alunos", artist: "Nina e Fernanda", src: "nina.mp3", turma: "TURMA 602" },
-            { title: "Trabalho de Cordel", artist: "Vitor Lima e João Pedro Neves", src: "vitor.mp3", turma: "TURMA 602" }
+            { title: "A copa do horror", artist: "Vinícius, Helena e Lorenzo", src: "vera.mp3", turma: "TURMA 602" },
+            { title: "Gol", artist: "Nina e Fernanda", src: "nina.mp3", turma: "TURMA 602" },
+            { title: "Fifa 2026", artist: "Vitor Lima e João Pedro Neves", src: "vitor.mp3", turma: "TURMA 602" }
         ];
 
         let currentTrackIndex = 0;
@@ -220,7 +236,7 @@
             if (audioElement.duration) {
                 const progressPercent = (audioElement.currentTime / audioElement.duration) * 100;
                 progressBar.style.width = `${progressPercent}%`;
-                
+
                 let currentMinutes = Math.floor(audioElement.currentTime / 60);
                 let currentSeconds = Math.floor(audioElement.currentTime % 60);
                 if (currentSeconds < 10) currentSeconds = `0${currentSeconds}`;
@@ -257,4 +273,5 @@
         };
     </script>
 </body>
+
 </html>
