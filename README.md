@@ -20,7 +20,7 @@ O site reúne **24 produções exclusivas dos estudantes**, organizadas por turm
 
 ## 🌐 Acesso Online
 
-- **Deploy na Vercel:** [https://copa-cambauba-.vercel.app](https://copa-cambauba-.vercel.app)
+- **Deploy na Vercel:** [https://copa-cambauba-owaf.vercel.app](https://copa-cambauba-owaf.vercel.app)
 - **Repositório no GitHub:** [Lucas-dev100/copa-cambauba-](https://github.com/Lucas-dev100/copa-cambauba-)
 
 ---
